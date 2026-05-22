@@ -1,6 +1,6 @@
 {
   "name": "ParkEase",
-  "description": "SaaS Smart Parking Solution for Real-time Parking Availability, Intelligent Navigation, and Analytics.",
+  "description": "Solusi SaaS Parkir Pintar untuk Ketersediaan Parkir Real-Time, Navigasi Cerdas, dan Analitik.",
   "requestFramePermissions": ["geolocation"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

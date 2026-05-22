@@ -23,16 +23,16 @@ export default function Hero({ onLaunchDemo, onExploreGallery }: HeroProps) {
             {/* Tagline */}
             <div className="inline-flex items-center self-center lg:self-start bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full border border-blue-100 gap-2 shadow-sm">
               <Sparkles className="h-4 w-4 text-blue-600 animate-pulse" />
-              <span>Smart City SaaS Platform</span>
+              <span>Platform SaaS Kota Pintar</span>
             </div>
 
             {/* Main Headline */}
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
-                Find Your Perfect <br /><span className="text-blue-600">Space</span> in Seconds.
+                Temukan <span className="text-blue-600">Tempat</span> <br />Sempurna Anda dalam Hitungan Detik.
               </h1>
               <p className="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                ParkEase uses real-time sensors and cloud intelligence to connect drivers with available spots instantly. Stop circling, start parking. Keep your multi-zone parking operations fully optimized.
+                ParkEase menggunakan sensor real-time dan kecerdasan cloud untuk menghubungkan pengemudi dengan tempat parkir yang tersedia secara instan. Berhenti berputar-putar, mulailah memarkir. Jaga operasional parkir multi-zona Anda tetap optimal.
               </p>
             </div>
 
@@ -41,22 +41,22 @@ export default function Hero({ onLaunchDemo, onExploreGallery }: HeroProps) {
               <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">Sub-second Sync</h4>
-                  <p className="text-xs text-slate-500">IoT sensor telemetry update</p>
+                  <h4 className="text-sm font-bold text-slate-900">Sinkronisasi Instan</h4>
+                  <p className="text-xs text-slate-500">Pembaruan telemetri sensor IoT cepat</p>
                 </div>
               </div>
               <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">Smart Routing</h4>
-                  <p className="text-xs text-slate-500">Custom in-app direct navigation</p>
+                  <h4 className="text-sm font-bold text-slate-900">Navigasi Rute Pintar</h4>
+                  <p className="text-xs text-slate-500">Navigasi langsung dalam aplikasi</p>
                 </div>
               </div>
               <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">9x Dwell Reduction</h4>
-                  <p className="text-xs text-slate-500">Drastically limits city idling</p>
+                  <h4 className="text-sm font-bold text-slate-900">9x Lebih Cepat</h4>
+                  <p className="text-xs text-slate-500">Sangat mengurangi waktu tunggu</p>
                 </div>
               </div>
             </div>
@@ -67,7 +67,7 @@ export default function Hero({ onLaunchDemo, onExploreGallery }: HeroProps) {
                 onClick={onLaunchDemo}
                 className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-100 hover:bg-blue-700 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 group cursor-pointer text-lg"
               >
-                <span>Find Parking Now</span>
+                <span>Cari Parkir Sekarang</span>
                 <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>
 
@@ -75,7 +75,7 @@ export default function Hero({ onLaunchDemo, onExploreGallery }: HeroProps) {
                 onClick={onExploreGallery}
                 className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-slate-200 text-slate-800 font-bold rounded-xl hover:bg-slate-50 hover:scale-[1.01] transition-all flex items-center justify-center gap-2 cursor-pointer text-lg"
               >
-                <span>Learn More</span>
+                <span>Pelajari Lebih Lanjut</span>
               </button>
             </div>
 
@@ -83,17 +83,17 @@ export default function Hero({ onLaunchDemo, onExploreGallery }: HeroProps) {
             <div className="flex items-center justify-center lg:justify-start space-x-8 pt-6 border-t border-slate-200">
               <div>
                 <span className="block text-3xl font-extrabold text-slate-900">99.8%</span>
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Accuracy</span>
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Akurasi</span>
               </div>
               <div className="h-8 w-[1px] bg-slate-200" />
               <div>
                 <span className="block text-3xl font-extrabold text-slate-900">1.2k+</span>
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Parking Hubs</span>
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Pusat Parkir</span>
               </div>
               <div className="h-8 w-[1px] bg-slate-200" />
               <div>
                 <span className="block text-3xl font-extrabold text-slate-900">50k+</span>
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Daily Users</span>
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Pengguna Harian</span>
               </div>
             </div>
           </div>
@@ -127,15 +127,15 @@ export default function Hero({ onLaunchDemo, onExploreGallery }: HeroProps) {
                       <Cpu className="text-blue-600 h-4 w-4" />
                       <span className="text-xs font-bold text-slate-800 font-mono">Terminal Node GI-42</span>
                     </div>
-                    <span className="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-mono font-bold">ONLINE</span>
+                    <span className="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-mono font-bold">AKTIF</span>
                   </div>
                   <div className="grid grid-cols-2 gap-2 text-left">
                     <div className="bg-slate-50 p-2.5 rounded border border-slate-200">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Total Live Space</p>
-                      <p className="text-sm font-bold text-slate-900 font-mono">92/100 slots</p>
+                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Total Ruang Aktif</p>
+                      <p className="text-sm font-bold text-slate-900 font-mono">92/100 slot</p>
                     </div>
                     <div className="bg-slate-50 p-2.5 rounded border border-slate-200">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Active Sensors</p>
+                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Sensor Aktif</p>
                       <span className="text-sm font-bold text-slate-900 font-mono">99.85%</span>
                     </div>
                   </div>

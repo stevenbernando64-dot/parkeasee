@@ -3,40 +3,40 @@ import { GALLERY_ITEMS } from "../data/mockData";
 import { Camera, ShieldCheck, Heart, ArrowUpRight, Cpu, Eye, Radio, CreditCard, Sparkles } from "lucide-react";
 
 export default function GallerySection() {
-  const [selectedTag, setSelectedTag] = useState<string>("All");
+  const [selectedTag, setSelectedTag] = useState<string>("Semua");
   const [activeSandboxNode, setActiveSandboxNode] = useState<number>(0);
 
-  const tags = ["All", "Sensor Feedback", "Computer Vision", "Predictive AI", "Mobile Routing"];
+  const tags = ["Semua", "Umpan Balik Sensor", "Visi Komputer", "AI Prediktif", "Rute Seluler"];
 
-  const filteredItems = selectedTag === "All" 
+  const filteredItems = selectedTag === "Semua" 
     ? GALLERY_ITEMS 
     : GALLERY_ITEMS.filter(item => item.tag === selectedTag);
 
   // Dynamic schematic hardware diagrams
   const sandboxNodes = [
     {
-      type: "Geomagnetic Ground Node (GE-110)",
-      purpose: "Battery-powered surface magnetometers that register exact car presence above each slot and transmit state in sub-gigahertz bands.",
-      lifespan: "10 Years Battery Life",
-      frequency: "868 / 915 MHz RF",
-      status: "Active (Telemetry Loop)",
+      type: "Node Tanah Geomagnetik (GE-110)",
+      purpose: "Magnetometer permukaan bertenaga baterai yang mendeteksi keberadaan mobil secara tepat di atas setiap slot dan mengirimkan status dalam pita sub-gigahertz.",
+      lifespan: "Masa Pakai Baterai 10 Tahun",
+      frequency: "RF 868 / 915 MHz",
+      status: "Aktif (Sirkuit Telemetri)",
       accuracy: "> 99.8%"
     },
     {
-      type: "ANPR Dual-Spectrum CCTV Lens",
-      purpose: "Deep-learning on-edge camera that digitizes registration plate digits under low-luminescence and coordinates gateway relays.",
-      lifespan: "PoE Connected 24V",
-      frequency: "Focal Length 4.7-103mm",
-      status: "Analyzing Gate Stream",
-      accuracy: "99.2% Night Accuracy"
+      type: "Lensa CCTV Spektrum Ganda ANPR",
+      purpose: "Kamera on-edge deep-learning yang mendigitalkan nomor pelat kendaraan dalam kondisi cahaya rendah dan mengoordinasikan relai gerbang.",
+      lifespan: "Terhubung PoE 24V",
+      frequency: "Panjang Fokus 4.7-103mm",
+      status: "Menganalisis Aliran Gerbang",
+      accuracy: "99.2% Akurasi Malam Hari"
     },
     {
-      type: "LED Portal Matrix Signage",
-      purpose: "High-contrast structural indicator that lights up in neon green/red arrows immediately past the lane divider gates.",
-      lifespan: "RS485 Bus Interface",
-      frequency: "5000 nits Outdoors",
-      status: "Syncing Slot Matrix",
-      accuracy: "12 Channels Direct Mapping"
+      type: "Papan Nama Matriks Portal LED",
+      purpose: "Indikator struktural kontras tinggi yang menyala dengan panah neon hijau/merah tepat setelah gerbang pembatas jalur.",
+      lifespan: "Antarmuka Bus RS485",
+      frequency: "5000 nits Luar Ruangan",
+      status: "Menyelaraskan Matriks Slot",
+      accuracy: "Pemetaan Langsung 12 Saluran"
     }
   ];
 
@@ -49,13 +49,13 @@ export default function GallerySection() {
       <div className="max-w-7xl mx-auto z-10 relative">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 bg-blue-5 text-blue-700 text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-blue-100 mb-4 font-sans">
-            <Camera className="h-3.5 w-3.5 text-blue-600" /> High-Resolution Showcase
+            <Camera className="h-3.5 w-3.5 text-blue-600" /> Galeri Resolusi Tinggi
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-            ParkEase System Feature Gallery
+            Galeri Fitur Sistem ParkEase
           </h2>
           <p className="mt-4 text-slate-600 text-base sm:text-lg">
-            A visual overview of the smart cities hardware and cloud interface layers powering our SaaS environment.
+            Tinjauan visual perangkat keras kota pintar dan lapisan antarmuka cloud yang mentenagai lingkungan SaaS kami.
           </p>
 
           {/* Filters */}
@@ -102,16 +102,16 @@ export default function GallerySection() {
                   <span>{item.title}</span>
                   <ArrowUpRight className="h-5 w-5 text-slate-400 group-hover:text-blue-600 transition-colors" />
                 </h3>
-                <p className="text-slate-650 text-sm leading-relaxed font-normal">
+                <p className="text-slate-600 text-sm leading-relaxed font-normal">
                   {item.description}
                 </p>
                 <div className="mt-6 flex items-center gap-4 text-xs font-mono text-slate-400">
                   <span className="flex items-center gap-1.5 font-bold text-blue-600">
                     <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping" />
-                    Operational Trace
+                    Jalur Operasional
                   </span>
                   <span>•</span>
-                  <span>Updated Recently</span>
+                  <span>Baru Saja Diperbarui</span>
                 </div>
               </div>
             </div>
@@ -121,18 +121,18 @@ export default function GallerySection() {
         {/* Dynamic Sandbox Technical Hardware Explainer */}
         <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-12 border border-slate-200 shadow-md relative">
           <div className="absolute top-0 right-0 p-4 sm:p-8 font-mono text-[10px] text-slate-400 hidden md:block">
-            HARDWARE SPECIFICATION SCHEMA // v0.98B
+            SKEMA SPESIFIKASI PERANGKAT KERAS // v0.98B
           </div>
           
           <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-[10px] font-sans font-bold tracking-wide px-3 py-1.5 rounded-lg border border-blue-100 mb-4 uppercase">
-              <Cpu className="h-3.5 w-3.5 text-blue-600" /> Hardware Integration Sandbox
+              <Cpu className="h-3.5 w-3.5 text-blue-600" /> Sandbox Integrasi Perangkat Keras
             </div>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              Physical IoT Devices & Sensors
+              Perangkat Fisik & Sensor IoT
             </h3>
             <p className="mt-3 text-slate-600 text-sm sm:text-base">
-              Explore how ParkEase integrates with physical edge devices to feed real-time analytics to the cloud database.
+              Jelajahi bagaimana ParkEase berintegrasi dengan perangkat fisik edge untuk menyuplai analitik real-time ke database cloud.
             </p>
           </div>
 
@@ -150,7 +150,7 @@ export default function GallerySection() {
                   }`}
                 >
                   <p className={`text-[10px] font-mono uppercase tracking-wider mb-1 ${activeSandboxNode === idx ? "text-blue-100" : "text-slate-400"}`}>
-                    IoT Terminal Node #0{idx + 1}
+                    Node Terminal IoT #0{idx + 1}
                   </p>
                   <p className="font-bold text-sm sm:text-base text-current">
                     {node.type}
@@ -163,7 +163,7 @@ export default function GallerySection() {
             <div className="lg:col-span-7 bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-200">
-                  <span className="text-xs font-mono text-slate-400">Node Status & Capacity</span>
+                  <span className="text-xs font-mono text-slate-400">Status Node & Kapasitas</span>
                   <span className="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-1 rounded-full font-bold flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
                     {sandboxNodes[activeSandboxNode].status}
@@ -180,19 +180,19 @@ export default function GallerySection() {
 
               <div className="grid grid-cols-3 gap-4 pt-8 mt-8 border-t border-slate-200">
                 <div>
-                  <span className="block text-[10px] font-mono text-slate-400 uppercase font-semibold">Edge Accuracy</span>
+                  <span className="block text-[10px] font-mono text-slate-400 uppercase font-semibold">Akurasi Edge</span>
                   <span className="text-sm font-bold text-slate-800 font-mono">
                     {sandboxNodes[activeSandboxNode].accuracy}
                   </span>
                 </div>
                 <div>
-                  <span className="block text-[10px] font-mono text-slate-400 uppercase font-semibold">Power profile</span>
+                  <span className="block text-[10px] font-mono text-slate-400 uppercase font-semibold">Profil Daya</span>
                   <span className="text-sm font-bold text-slate-800 font-mono">
                     {sandboxNodes[activeSandboxNode].lifespan}
                   </span>
                 </div>
                 <div>
-                  <span className="block text-[10px] font-mono text-slate-400 uppercase font-semibold">Radio Protocol</span>
+                  <span className="block text-[10px] font-mono text-slate-400 uppercase font-semibold">Protokol Radio</span>
                   <span className="text-sm font-bold text-slate-800 font-mono">
                     {sandboxNodes[activeSandboxNode].frequency}
                   </span>

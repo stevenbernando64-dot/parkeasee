@@ -146,80 +146,80 @@ export const INITIAL_LOGS: VehicleLog[] = [
 
 export const SAAS_TIERS = [
   {
-    name: "Standard Hub",
+    name: "Hub Standar (Standard Hub)",
     priceMonthly: "Rp 1.499.000",
-    description: "Perfect for single smaller commercial lots, office compounds, or specialized venues.",
+    description: "Sangat cocok untuk area komersial kecil tunggal, kompleks perkantoran, atau tempat khusus.",
     features: [
-      "Up to 50 smart parking spots",
-      "Real-time sensor API integration",
-      "Dynamic reservation system",
-      "Core admin analytics dashboard",
-      "Email & Slack notifications support",
-      "99.5% service uptime guarantee",
+      "Hingga 50 tempat parkir pintar",
+      "Integrasi API sensor real-time",
+      "Sistem reservasi dinamis",
+      "Dasbor analitik admin utama",
+      "Dukungan notifikasi Email & Slack",
+      "Jaminan ketersediaan layanan 99.5%",
     ],
     popular: false,
-    cta: "Start 14-Day Free Trial",
+    cta: "Mulai Uji Coba Gratis 14 Hari",
   },
   {
-    name: "Enterprise Plaza",
+    name: "Plaza Enterprise (Enterprise Plaza)",
     priceMonthly: "Rp 3.899.000",
-    description: "Designed for premium multi-zone structures, large shopping malls, and heavy civic hubs.",
+    description: "Dirancang untuk struktur multi-zona premium, pusat perbelanjaan besar, dan pusat kota yang padat.",
     features: [
-      "Unlimited parking spots",
-      "Camera AI & sensor fusion capability",
-      "Complete custom domain web portal",
-      "Multi-operator accounts & permissions",
-      "Advanced predictive peak traffic metrics",
-      "Dedicated 24/7 technical architect",
-      "White-labeled driver iOS & Android wrappers",
+      "Tempat parkir tanpa batas",
+      "Kemampuan fusi sensor & AI kamera",
+      "Portal web domain khusus lengkap",
+      "Akun & izin multi-operator",
+      "Metrik prediksi lalu lintas puncak tingkat lanjut",
+      "Arsitek teknis khusus 24/7",
+      "Aplikasi driver berlabel putih (white-label) untuk iOS & Android",
     ],
     popular: true,
-    cta: "Deploy Enterprise Cloud",
+    cta: "Terapkan Cloud Enterprise",
   },
   {
-    name: "Smart City Infrastructure",
-    priceMonthly: "Custom Pricing",
-    description: "Government-scale parking network integration across multiple districts with municipal APIs.",
+    name: "Infrastruktur Kota Pintar (Smart City)",
+    priceMonthly: "Harga Kustom",
+    description: "Integrasi jaringan parkir skala pemerintah di berbagai distrik dengan API pemerintah kota.",
     features: [
-      "Multi-location federated network",
-      "Open API endpoints for public transit synchronization",
-      "Congestion tax & high-volume surge rate logic",
-      "Direct municipal GPS & maps provider integration",
-      "SLA 99.99% fault-tolerant infrastructure",
-      "Hardware custom installation consultancy",
+      "Jaringan terfederasi multi-lokasi",
+      "Titik akhir API terbuka untuk sinkronisasi transit publik",
+      "Logika pajak kemacetan & tarif lonjakan volume tinggi",
+      "Integrasi langsung dengan GPS kota & penyedia peta",
+      "Infrastruktur toleransi kesalahan SLA 99,99%",
+      "Konsultasi instalasi perangkat keras khusus",
     ],
     popular: false,
-    cta: "Contact City Architects",
+    cta: "Hubungi Arsitek Kota",
   }
 ];
 
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: "g1",
-    title: "Dynamic Smart Lot Interface",
-    description: "Our pristine vector-drawn parking layout map responds automatically to physical sensor changes or digital driver reservations.",
+    title: "Antarmuka Slot Pintar Dinamis",
+    description: "Peta tata letak parkir berbasis vektor kami merespons secara otomatis terhadap perubahan sensor fisik atau reservasi digital pengemudi.",
     imageSrc: "https://images.unsplash.com/photo-1506521788701-1e13a4ea837a?auto=format&fit=crop&w=800&q=80",
-    tag: "Sensor Feedback"
+    tag: "Umpan Balik Sensor"
   },
   {
     id: "g2",
-    title: "AI Camera License Recognition",
-    description: "Computer vision nodes automatically index plates at entries and exits, cross-referencing cloud reserves to lift gates without delay.",
+    title: "Pengenalan Pelat Nomor Kamera AI",
+    description: "Node computer vision secara otomatis mencatat pelat nomor di pintu masuk dan keluar, mencocokkannya dengan reservasi cloud untuk membuka gerbang tanpa penundaan.",
     imageSrc: "https://images.unsplash.com/photo-1616422285623-13ff0162193c?auto=format&fit=crop&w=800&q=80",
-    tag: "Computer Vision"
+    tag: "Visi Komputer"
   },
   {
     id: "g3",
-    title: "Universal SaaS Analytics Hub",
-    description: "Real-time occupancy charts, weekly revenue forecasts, average dwell metrics, and peak traffic predictions out of the box.",
+    title: "Pusat Analisis SaaS Universal",
+    description: "Grafik okupansi real-time, prakiraan pendapatan mingguan, metrik durasi rata-rata, dan prediksi lalu lintas puncak yang siap pakai.",
     imageSrc: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-    tag: "Predictive AI"
+    tag: "AI Prediktif"
   },
   {
     id: "g4",
-    title: "Sub-Second Mobile Keyless Passes",
-    description: "Drivers load instantly compiled maps with green arrow trails leading direct to pre-allocated sensors upon gate clearance.",
+    title: "Akses Tanpa Kunci Seluler Instan",
+    description: "Pengemudi langsung memuat peta dengan panduan panah hijau yang memandu mereka langsung menuju sensor yang dialokasikan setelah melewati gerbang.",
     imageSrc: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80",
-    tag: "Mobile Routing"
+    tag: "Rute Seluler"
   }
 ];

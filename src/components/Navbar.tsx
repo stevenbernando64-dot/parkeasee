@@ -10,9 +10,9 @@ export default function Navbar({ currentTab, onChangeTab }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { label: "Home", tab: "Home" as const },
-    { label: "Gallery", tab: "Gallery" as const },
-    { label: "About Space & SaaS", tab: "About" as const },
+    { label: "Beranda", tab: "Home" as const },
+    { label: "Galeri", tab: "Gallery" as const },
+    { label: "Tentang Layanan & SaaS", tab: "About" as const },
   ];
 
   return (
@@ -55,7 +55,7 @@ export default function Navbar({ currentTab, onChangeTab }: NavbarProps) {
               className="flex items-center space-x-2 bg-slate-900 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-800 shadow-md shadow-slate-200 hover:scale-[1.01] active:scale-[0.99] transition-all"
             >
               <MonitorPlay className="h-4 w-4" />
-              <span>Launch Platform</span>
+              <span>Buka Platform</span>
             </button>
           </div>
 
@@ -66,7 +66,7 @@ export default function Navbar({ currentTab, onChangeTab }: NavbarProps) {
               className="mr-2 flex items-center space-x-1 bg-blue-600 text-white px-3.5 py-2 rounded-lg text-xs font-semibold hover:bg-blue-700 shadow shadow-blue-100"
             >
               <MonitorPlay className="h-3.5 w-3.5" />
-              <span>Launch</span>
+              <span>Mulai</span>
             </button>
 
             <button
@@ -107,7 +107,7 @@ export default function Navbar({ currentTab, onChangeTab }: NavbarProps) {
             className="w-full flex items-center justify-center space-x-2 bg-slate-900 text-white py-3.5 rounded-xl text-base font-semibold shadow-lg shadow-slate-200"
           >
             <MonitorPlay className="h-5 w-5" />
-            <span>Launch Smart Platform</span>
+            <span>Mulai Platform Pintar</span>
           </button>
         </div>
       )}

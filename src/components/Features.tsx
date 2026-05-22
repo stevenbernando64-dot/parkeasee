@@ -14,58 +14,58 @@ export default function Features() {
   const parkFeatures = [
     {
       icon: Radio,
-      title: "Real-Time Availability Dashboard",
-      description: "Instantly check parking capacity dynamically updated by smart geomagnetic sensors and optical cameras.",
-      badge: "IoT Live Sync",
+      title: "Dasbor Ketersediaan Real-Time",
+      description: "Periksa kapasitas parkir secara instan yang diperbarui secara dinamis oleh sensor geomagnetik pintar dan kamera optik.",
+      badge: "Sinkronisasi IoT",
       colorClass: "from-blue-500 to-cyan-500"
     },
     {
       icon: Compass,
-      title: "Smart Slot Navigation",
-      description: "Generates optimal digital indoor paths leading drivers directly from street access directly to their reserved space.",
-      badge: "Turn-by-Turn",
+      title: "Navigasi Slot Pintar",
+      description: "Menghasilkan rute dalam ruangan digital yang optimal untuk memandu pengemudi langsung dari jalan luar ke tempat parkir yang dipesan.",
+      badge: "Navigasi Belokan",
       colorClass: "from-indigo-500 to-purple-500"
     },
     {
       icon: MapPin,
-      title: "Location Map Integration",
-      description: "Aggregates federated municipal spaces, private malls, and airport terminals on an interactive vector map canvas.",
-      badge: "OpenStreetMap Engine",
+      title: "Integrasi Peta Lokasi",
+      description: "Menggabungkan area kota percontohan, pusat perbelanjaan swasta, dan terminal bandara dalam satu kanvas peta vektor interaktif.",
+      badge: "Mesin OpenStreetMap",
       colorClass: "from-sky-500 to-blue-500"
     },
     {
       icon: BookmarkCheck,
-      title: "Instant Reservation System",
-      description: "Allocate and pre-claim private parking with custom plate-locking buffers that release on successful code scans.",
-      badge: "Up to 3 hours buffer",
+      title: "Sistem Reservasi Instan",
+      description: "Alokasikan dan klaim tempat parkir pribadi dengan sistem kunci pelat nomor khusus yang akan terbuka setelah pemindaian kode berhasil.",
+      badge: "Batas waktu hingga 3 jam",
       colorClass: "from-emerald-500 to-teal-500"
     },
     {
       icon: Eye,
-      title: "Vehicle Entry & Exit Monitoring",
-      description: "Keeps live timestamps of ingress and egress, supporting high-fidelity license plate scanning without manual ticket stubs.",
-      badge: "AI ANPR Powered",
+      title: "Pemantauan Masuk & Keluar Kendaraan",
+      description: "Mencatat stempel waktu masuk dan keluar secara langsung, mendukung pemindaian pelat nomor presisi tinggi tanpa tiket kertas manual.",
+      badge: "Bertenaga AI ANPR",
       colorClass: "from-purple-500 to-pink-500"
     },
     {
       icon: Bell,
-      title: "In-App Broadcast Notifications",
-      description: "Get alerts on slot clearance, expiration countdown timer alerts, and dynamic peak-hour rate change broadcasts.",
+      title: "Notifikasi Siaran Dalam Aplikasi",
+      description: "Dapatkan peringatan saat slot kosong, hitung mundur masa berlaku pesanan, dan siaran perubahan tarif dinamis pada jam sibuk.",
       badge: "Push & Slack",
       colorClass: "from-amber-500 to-orange-500"
     },
     {
       icon: BarChart3,
-      title: "Parking Usage Analytics",
-      description: "Unlock actionable insights on hourly dwell peaks, revenue patterns, regional trends, and custom occupancy factors.",
-      badge: "Operator Intelligence",
+      title: "Analisis Penggunaan Parkir",
+      description: "Dapatkan wawasan berharga tentang puncak durasi parkir tiap jam, pola pendapatan, tren regional, dan faktor okupansi khusus.",
+      badge: "Kecerdasan Operator",
       colorClass: "from-blue-600 to-indigo-600"
     },
     {
       icon: CreditCard,
-      title: "Digital Payment Integrations",
-      description: "Provides seamless cashless clearance through virtual wallets, standard multi-bank QRIS, or saved business profiles.",
-      badge: "Frictionless Checkout",
+      title: "Integrasi Pembayaran Digital",
+      description: "Menyediakan pembayaran nontunai yang mulus melalui dompet virtual, QRIS multi-bank standar, atau profil bisnis yang tersimpan.",
+      badge: "Pembayaran Tanpa Hambatan",
       colorClass: "from-teal-500 to-cyan-500"
     }
   ];
@@ -78,13 +78,13 @@ export default function Features() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-blue-100 mb-4 font-sans">
-            <Zap className="h-3.5 w-3.5 text-blue-600" /> Core Capabilities
+            <Zap className="h-3.5 w-3.5 text-blue-600" /> Kemampuan Utama
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-            Transforming Smart Parking Ecosystems
+            Mentransformasi Ekosistem Parkir Pintar
           </h2>
           <p className="mt-4 text-slate-600 text-base sm:text-lg">
-            Our modular SaaS solution solves manual congestion blockages by putting complete control back into operators' and drivers' hands.
+            Solusi SaaS modular kami mengatasi hambatan kemacetan manual dengan memberikan kendali penuh kembali ke tangan operator dan pengemudi.
           </p>
         </div>
 
@@ -113,7 +113,7 @@ export default function Features() {
 
                 <div className="mt-6 flex items-center justify-between pt-4 border-t border-slate-200/60">
                   <span className="text-[10px] font-mono uppercase text-slate-400 tracking-wider">
-                    MODULE 0{i + 1}
+                    MODUL 0{i + 1}
                   </span>
                   <span className="text-[11px] font-mono text-blue-600 font-semibold bg-blue-50 px-2 py-0.5 rounded border border-blue-100">
                     {f.badge}

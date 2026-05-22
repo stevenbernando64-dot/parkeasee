@@ -272,10 +272,10 @@ export default function Dashboard() {
         <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center space-x-3">
             <span className="bg-blue-50 text-blue-600 text-[11px] px-2.5 py-1 rounded border border-blue-100 uppercase tracking-widest font-bold shadow-sm">
-              PLATFORM WORKSPACE
+              RUANG KERJA PLATFORM
             </span>
             <span className="text-sm font-semibold text-slate-600">
-              Selected: <span className="text-slate-900 font-black">{currentArea.name}</span>
+              Terpilih: <span className="text-slate-900 font-black">{currentArea.name}</span>
             </span>
           </div>
 
@@ -289,18 +289,18 @@ export default function Dashboard() {
               }`}
             >
               <Car className="h-4 w-4" />
-              <span>Pengendara (Driver App)</span>
+              <span>Aplikasi Pengemudi</span>
             </button>
             <button
               onClick={() => setRole("operator")}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 role === "operator" 
                   ? "bg-blue-600 text-white shadow" 
-                  : "text-slate-505 hover:text-slate-800"
+                  : "text-slate-500 hover:text-slate-800"
               }`}
             >
               <Gauge className="h-4 w-4" />
-              <span>Pengelola (Operator Console)</span>
+              <span>Konsol Operator</span>
             </button>
           </div>
         </div>
@@ -314,10 +314,10 @@ export default function Dashboard() {
             <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-base font-bold text-slate-800 flex items-center gap-2">
-                  <MapPin className="text-blue-600 h-4.5 w-4.5" /> Core Smart Hubs
+                  <MapPin className="text-blue-600 h-4.5 w-4.5" /> Pusat Hub Pintar
                 </h3>
                 <span className="text-[10px] font-mono bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-600">
-                  {filteredAreas.length} Active
+                  {filteredAreas.length} Aktif
                 </span>
               </div>
 
@@ -326,7 +326,7 @@ export default function Dashboard() {
                 <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
                 <input
                   type="text"
-                  placeholder="Street, mall, or terminal..."
+                  placeholder="Jalan, mal, atau terminal..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2 pl-9 pr-4 text-xs font-normal text-slate-800 placeholder-slate-450 focus:outline-none focus:border-blue-600 transition-colors"
@@ -355,16 +355,16 @@ export default function Dashboard() {
                         <span className={`text-[10px] font-mono px-2 py-0.5 rounded font-semibold ${
                           area.popularity === "High" ? "bg-rose-50 text-rose-600" : "bg-amber-50 text-amber-600"
                         }`}>
-                          {area.popularity} Density
+                          {area.popularity === "High" ? "Sangat Padat" : "Kepadatan Sedang"}
                         </span>
                       </div>
 
                       {/* Bar Indicators */}
                       <div className="mt-4 w-full space-y-1.5">
                         <div className="flex justify-between text-[10px] text-slate-500 font-mono">
-                          <span>Available Count</span>
+                          <span>Ketersediaan Slot</span>
                           <span className={`${area.availableSlots > 0 ? "text-emerald-600 font-bold" : "text-rose-600 font-bold"}`}>
-                            {area.availableSlots} / {area.totalSlots} Slots
+                            {area.availableSlots} / {area.totalSlots} Slot
                           </span>
                         </div>
                         <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
@@ -380,9 +380,9 @@ export default function Dashboard() {
                           />
                         </div>
                         <div className="flex items-center justify-between text-[11px] pt-1">
-                          <span className="text-slate-600 font-mono font-semibold">Rp {area.ratePerHour.toLocaleString("id-ID")}/hr</span>
+                          <span className="text-slate-600 font-mono font-semibold">Rp {area.ratePerHour.toLocaleString("id-ID")}/jam</span>
                           <span className="text-slate-500 flex items-center gap-1">
-                            <Clock className="w-3 h-3" /> ~{area.durationMin}m away ({area.distanceKm}km)
+                            <Clock className="w-3 h-3" /> ~{area.durationMin} menit ({area.distanceKm} km)
                           </span>
                         </div>
                       </div>
@@ -396,12 +396,12 @@ export default function Dashboard() {
             {role === "driver" && (
               <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
                 <h4 className="text-sm font-bold text-slate-800 flex items-center gap-2">
-                  <Bell className="text-blue-600 h-4.5 w-4.5" /> My Active Claims
+                  <Bell className="text-blue-600 h-4.5 w-4.5" /> Klaim Aktif Saya
                 </h4>
                 
                 {reservations.filter(r => r.status === "Active" && r.areaId === selectedAreaId).length === 0 ? (
-                  <div className="bg-slate-50 p-6 rounded-xl border border-slate-150 text-center text-xs text-slate-450 font-normal">
-                    No holding counts. Select an "Available" slot on the locator grid to pre-claim a lock.
+                  <div className="bg-slate-50 p-6 rounded-xl border border-slate-150 text-center text-xs text-slate-400 font-normal">
+                    Tidak ada pemesanan aktif. Pilih slot "Tersedia" pada petak pencari untuk memesan slot terlebih dahulu.
                   </div>
                 ) : (
                   <div className="space-y-4">
@@ -412,22 +412,22 @@ export default function Dashboard() {
                         <div key={res.id} className="bg-slate-50 p-4 rounded-xl border border-blue-300 space-y-3 shadow-md shadow-blue-50 animate-pulse-subtle">
                           <div className="flex justify-between items-center pb-2.5 border-b border-slate-200">
                             <div className="text-left">
-                              <span className="text-[10px] font-mono text-slate-400 font-bold uppercase">CLAIM ID: {res.id.toUpperCase()}</span>
+                              <span className="text-[10px] font-mono text-slate-400 font-bold uppercase">ID KLAIM: {res.id.toUpperCase()}</span>
                               <p className="text-base font-extrabold text-blue-600 font-mono">SLOT {res.slotId}</p>
                             </div>
                             <div className="text-right">
-                              <span className="text-[10px] font-mono text-rose-500 block uppercase font-bold">BUFFER RELEASING</span>
-                              <span className="text-sm font-black font-mono text-slate-850">{mins.toString().padStart(2, "0")}:{secs.toString().padStart(2, "0")}</span>
+                              <span className="text-[10px] font-mono text-rose-500 block uppercase font-bold">SISA WAKTU RESERVASI</span>
+                              <span className="text-sm font-black font-mono text-slate-800">{mins.toString().padStart(2, "0")}:{secs.toString().padStart(2, "0")}</span>
                             </div>
                           </div>
 
                           <div className="grid grid-cols-2 gap-2 text-xs">
                             <div className="bg-white border border-slate-150 p-2 rounded shadow-sm">
-                              <span className="text-[9px] text-slate-400 block uppercase font-mono font-bold">PLATE ID LOCK</span>
+                              <span className="text-[9px] text-slate-400 block uppercase font-mono font-bold">PLAT NOMOR</span>
                               <span className="font-extrabold text-slate-800 font-mono">{res.vehiclePlate}</span>
                             </div>
                             <div className="bg-white border border-slate-150 p-2 rounded shadow-sm">
-                              <span className="text-[9px] text-slate-400 block uppercase font-mono font-bold">EST RATE</span>
+                              <span className="text-[9px] text-slate-400 block uppercase font-mono font-bold">EST. BIAYA</span>
                               <span className="font-extrabold text-slate-800 font-mono">Rp {res.costEstimate.toLocaleString("id-ID")}</span>
                             </div>
                           </div>
@@ -435,9 +435,9 @@ export default function Dashboard() {
                           {/* Navigation route */}
                           <div className="bg-[#f0f7ff] p-3 rounded-lg border border-blue-100 text-[11px] font-mono text-slate-700 space-y-1">
                             <div className="text-blue-700 font-bold uppercase tracking-wider text-[10px] flex items-center gap-1">
-                              <Compass className="h-3 w-3 animate-spin-slow text-blue-600" /> Indoor Route Path:
+                              <Compass className="h-3 w-3 animate-spin-slow text-blue-600" /> Rute Navigasi Internal:
                             </div>
-                            <p className="font-medium">➤ Enter Gate 2 ➜ Go Level 2 Sector Block B ➜ Spot {res.slotId} is on the right.</p>
+                            <p className="font-medium">➤ Masuk Pintu 2 ➜ Ke Lantai 2 Sektor Blok B ➜ Posisi {res.slotId} di sebelah kanan.</p>
                           </div>
 
                           <div className="flex items-center gap-2 pt-1.5">
@@ -445,12 +445,12 @@ export default function Dashboard() {
                               onClick={() => handleCheckInClaim(res)}
                               className="flex-1 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs rounded-lg transition-colors cursor-pointer shadow-md"
                             >
-                              Arrived - Claim Spot
+                              Tiba - Klaim Tempat
                             </button>
                             <button
                               onClick={() => handleCancelReservation(res)}
                               className="p-2 bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-rose-600 rounded-lg transition-colors cursor-pointer border border-slate-200"
-                              title="Release Reservation Buffer"
+                              title="Batalkan Pemesanan"
                             >
                               <X className="h-4 w-4" />
                             </button>
@@ -468,19 +468,19 @@ export default function Dashboard() {
               <div className="bg-white p-6 rounded-2xl border border-slate-250 shadow-sm space-y-4">
                 <div className="flex justify-between items-center">
                   <h4 className="text-sm font-bold text-slate-800 flex items-center gap-2">
-                    <Activity className="text-blue-600 h-4.5 w-4.5" /> Event Logs
+                    <Activity className="text-blue-600 h-4.5 w-4.5" /> Log Peristiwa
                   </h4>
                   <button 
                     onClick={() => setLogs(INITIAL_LOGS)}
                     className="text-[10px] text-slate-500 font-mono hover:text-blue-600 flex items-center gap-1 font-bold cursor-pointer"
                   >
-                    <RefreshCcw className="h-3 w-3" /> Reset Logs
+                    <RefreshCcw className="h-3 w-3" /> Reset Log
                   </button>
                 </div>
 
                 <div className="space-y-2 max-h-[290px] overflow-y-auto scrollbar-thin">
                   {logs.filter(l => l.areaId === selectedAreaId).length === 0 ? (
-                    <p className="text-xs text-slate-500 text-center font-light py-4">No logged events yet.</p>
+                    <p className="text-xs text-slate-500 text-center font-light py-4">Belum ada peristiwa yang tercatat.</p>
                   ) : (
                     logs.filter(l => l.areaId === selectedAreaId).map((log) => (
                       <div key={log.id} className="bg-slate-50 p-2.5 rounded-lg border border-slate-150 text-[11px] font-mono flex items-center justify-between">
@@ -489,7 +489,7 @@ export default function Dashboard() {
                           <div>
                             <span className="text-slate-500 font-bold uppercase">{log.type}: </span>
                             <span className="text-slate-800 font-black">{log.slotId}</span>
-                            <span className="text-slate-500 block text-[9px] font-normal">Vehicle: {log.vehiclePlate}</span>
+                            <span className="text-slate-500 block text-[9px] font-normal">Kendaraan: {log.vehiclePlate}</span>
                           </div>
                         </div>
                         <span className="text-[10px] text-slate-400 font-medium">{log.timestamp}</span>
@@ -516,26 +516,26 @@ export default function Dashboard() {
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-slate-150">
                     <div>
                       <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                        <Compass className="text-emerald-500 h-5 w-5 animate-pulse" /> Live Slot Allocation Monitor
+                        <Compass className="text-emerald-500 h-5 w-5 animate-pulse" /> Pemantauan Alokasi Slot Real-Time
                       </h3>
                       <p className="text-xs text-slate-500 font-normal mt-0.5">
-                        Touch or click any <span className="text-emerald-600 font-bold">🟢 Vacant Slot</span> below to open reservation lock.
+                        Ketuk atau klik <span className="text-emerald-600 font-bold">🟢 Slot Kosong</span> untuk membuka kunci pemesanan.
                       </p>
                     </div>
 
                     {/* Color indicators */}
-                    <div className="flex items-center gap-3.5 flex-wrap text-[10px] font-mono text-slate-550 bg-slate-50 px-3.5 py-1.5 rounded-lg border border-slate-200">
+                    <div className="flex items-center gap-3.5 flex-wrap text-[10px] font-mono text-slate-500 bg-slate-50 px-3.5 py-1.5 rounded-lg border border-slate-200">
                       <div className="flex items-center gap-1.5">
                         <span className="w-2.5 h-2.5 rounded bg-emerald-500/20 border border-emerald-500" />
-                        <span>Available</span>
+                        <span>Tersedia</span>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <span className="w-2.5 h-2.5 rounded bg-amber-500/20 border border-amber-500" />
-                        <span>Reserved</span>
+                        <span>Dipesan</span>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <span className="w-2.5 h-2.5 rounded bg-rose-500/20 border border-rose-500" />
-                        <span>Occupied</span>
+                        <span>Terisi</span>
                       </div>
                     </div>
                   </div>
@@ -577,17 +577,17 @@ export default function Dashboard() {
 
                           <div className="flex items-end justify-between w-full">
                             {isAvailable && (
-                              <span className="text-[10px] text-emerald-600 font-extrabold font-mono tracking-wider">VACANT</span>
+                              <span className="text-[10px] text-emerald-600 font-extrabold font-mono tracking-wider">KOSONG</span>
                             )}
                             {isReserved && (
                               <div className="text-left leading-none font-semibold">
-                                <span className="text-[9px] text-amber-600 font-bold block leading-none">RESERVE</span>
+                                <span className="text-[9px] text-amber-600 font-bold block leading-none">PESAN</span>
                                 <span className="text-[8px] font-mono text-slate-500 font-medium">{slot.vehiclePlate}</span>
                               </div>
                             )}
                             {isOccupied && (
                               <div className="text-left leading-none font-semibold">
-                                <span className="text-[9px] text-rose-600 font-bold block leading-none">PARKED</span>
+                                <span className="text-[9px] text-rose-600 font-bold block leading-none">PARKIR</span>
                                 <span className="text-[8px] font-mono text-slate-500 font-medium">{slot.vehiclePlate}</span>
                               </div>
                             )}
@@ -603,75 +603,75 @@ export default function Dashboard() {
                   </div>
 
                   {/* Bottom Guideline alert */}
-                  <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-655 leading-relaxed font-normal flex items-center gap-3 shadow-inner">
+                  <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-600 leading-relaxed font-normal flex items-center gap-3 shadow-inner">
                     <ShieldAlert className="text-blue-600 h-5 w-5 shrink-0" />
                     <p>
-                      ParkEase systems guarantee your reservation lock is held up to the chosen duration limit. Plate Scanning cameras will automatically cross-check your pre-claimed ID at entry gates to open barriers cleanly.
+                      Sistem ParkEase menjamin kunci pesanan Anda berlaku hingga batas durasi yang dipilih. Kamera Pemindai Plat Nomor akan otomatis mencocokkan plat nomor Anda di pintu masuk untuk membuka palang pintu secara lancar.
                     </p>
                   </div>
                 </div>
 
-                               {/* SLOT RESERVATION WIZARD DRAWER PANEL */}
+                {/* SLOT RESERVATION WIZARD DRAWER PANEL */}
                 {resSlotId && (
                   <div className="bg-white border border-blue-200 rounded-3xl p-6 sm:p-8 shadow-xl relative animate-slideUp">
                     <button
                       onClick={() => setResSlotId(null)}
                       className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-800 bg-slate-50 hover:bg-slate-100 rounded-full border border-slate-200 cursor-pointer"
-                      title="Close Wizard"
+                      title="Batalkan Pemesanan"
                     >
                       <X className="h-4 w-4" />
                     </button>
 
                     <div className="max-w-xl">
                       <span className="text-[9px] font-mono text-blue-600 uppercase tracking-widest bg-blue-50 px-2.5 py-1 rounded border border-blue-100 font-bold">
-                        RESERVATION LOCK WORKSPACE
+                        RUANG PESANAN SLOT
                       </span>
                       <h4 className="text-xl font-bold text-slate-900 mt-3 flex items-center gap-2">
-                        Claim Spot <span className="text-blue-600 font-mono font-black">{resSlotId}</span> at {currentArea.name}
+                        Ambil Slot <span className="text-blue-600 font-mono font-black">{resSlotId}</span> di {currentArea.name}
                       </h4>
-                      <p className="text-xs text-slate-505 mt-1 font-normal">
-                        Fill your transport digits below to lock this slot secure.
+                      <p className="text-xs text-slate-500 mt-1 font-normal">
+                        Masukkan nomor plat kendaraan Anda di bawah ini untuk mengamankan slot.
                       </p>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
                         {/* INPUT 1: LICENSE PLATE */}
                         <div className="space-y-2">
-                          <label className="block text-[11px] font-bold text-slate-600 font-mono uppercase">Vehicle Plate Register</label>
+                          <label className="block text-[11px] font-bold text-slate-600 font-mono uppercase">Nomor Plat Kendaraan</label>
                           <input 
                             type="text"
                             value={resLicensePlate}
                             onChange={(e) => setResLicensePlate(e.target.value)}
-                            placeholder="e.g. B 2026 EV"
+                            placeholder="Contoh: B 2026 EV"
                             className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 text-sm font-extrabold uppercase tracking-wider w-full focus:outline-none focus:bg-white focus:border-blue-600 transition-all"
                           />
-                          <p className="text-[10px] text-slate-400 font-medium">Custom vehicle ID matching scanner target.</p>
+                          <p className="text-[10px] text-slate-400 font-medium">Nomor plat kendaraan harus sesuai untuk pemindaian di pintu masuk.</p>
                         </div>
 
                         {/* INPUT 2: HOLD TIMEOUT BUFFER */}
                         <div className="space-y-2">
-                          <label className="block text-[11px] font-bold text-slate-600 font-mono uppercase">Holding Buffer Time</label>
+                          <label className="block text-[11px] font-bold text-slate-600 font-mono uppercase">Batas Waktu Tunggu</label>
                           <select
                             value={resDurationBuffer}
                             onChange={(e) => setResDurationBuffer(parseInt(e.target.value))}
                             className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-850 text-sm font-semibold focus:outline-none focus:bg-white focus:border-blue-600 transition-all w-full cursor-pointer"
                           >
-                            <option value={300}>5 Minutes Buffer (Recommended)</option>
-                            <option value={600}>10 Minutes Buffer</option>
-                            <option value={900}>15 Minutes Buffer</option>
-                            <option value={1800}>30 Minutes Extended Buffer</option>
+                            <option value={300}>Batas 5 Menit (Direkomendasikan)</option>
+                            <option value={600}>Batas 10 Menit</option>
+                            <option value={900}>Batas 15 Menit</option>
+                            <option value={1800}>Batas Perpanjangan 30 Menit</option>
                           </select>
-                          <p className="text-[10px] text-slate-400 font-medium font-normal">Your hold automatically releases past this limit.</p>
+                          <p className="text-[10px] text-slate-400 font-normal">Reservasi Anda akan otomatis dibatalkan jika melebihi batas waktu ini.</p>
                         </div>
                       </div>
 
                       {/* PAYMENT SETTING */}
                       <div className="mt-6 p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-3">
-                        <label className="block text-xs font-semibold text-slate-600 font-mono uppercase">Cashless SaaS Gateway Integration</label>
+                        <label className="block text-xs font-semibold text-slate-600 font-mono uppercase">Integrasi Gerbang Pembayaran SaaS Nontunai</label>
                         <div className="grid grid-cols-3 gap-2.5">
                           {[
-                            { id: "qris", label: "QRIS Multi-Bank" },
-                            { id: "wallet", label: "Save Profile Wallet" },
-                            { id: "gate", label: "Invoice on Exit" }
+                            { id: "qris", label: "QRIS Semua Bank" },
+                            { id: "wallet", label: "Dompet Digital" },
+                            { id: "gate", label: "Bayar di Exit" }
                           ].map((pm) => (
                             <button
                               key={pm.id}
@@ -687,7 +687,7 @@ export default function Dashboard() {
                           ))}
                         </div>
                         <div className="flex items-center justify-between text-xs pt-2 font-mono text-slate-500 border-t border-slate-200">
-                          <span>Secure Holding Surcharge Fee</span>
+                          <span>Biaya Tambahan Pemesanan Slot</span>
                           <span className="font-extrabold text-slate-900">Rp {(currentArea.ratePerHour * 1.5).toLocaleString("id-ID")}</span>
                         </div>
                       </div>
@@ -698,13 +698,13 @@ export default function Dashboard() {
                           onClick={verifyAndReserve}
                           className="flex-1 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm tracking-wider uppercase rounded-xl transition-all cursor-pointer shadow-md"
                         >
-                          Confirm & Hold Slot Space
+                          Konfirmasi & Amankan Slot
                         </button>
                         <button
                           onClick={() => setResSlotId(null)}
                           className="py-3.5 px-6 bg-slate-100 text-slate-500 hover:text-slate-800 font-bold text-sm uppercase rounded-xl transition-all cursor-pointer border border-slate-200 hover:bg-slate-200"
                         >
-                          Cancel
+                          Batal
                         </button>
                       </div>
 
@@ -722,40 +722,40 @@ export default function Dashboard() {
                 {/* Operator live stats */}
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
                   <div className="bg-white p-5 rounded-2xl border border-slate-200 flex flex-col justify-between shadow-sm">
-                    <span className="text-[10px] font-mono uppercase text-slate-500 tracking-wider font-bold">Average Occupancy</span>
+                    <span className="text-[10px] font-mono uppercase text-slate-500 tracking-wider font-bold">Rata-rata Okupansi</span>
                     <p className="text-2xl font-black text-slate-900 mt-1.5 font-mono">{currentArea.busyProgress}%</p>
-                    <span className="text-[9px] text-emerald-600 mt-1 uppercase font-mono block font-bold">✔ Stable Stream</span>
+                    <span className="text-[9px] text-emerald-600 mt-1 uppercase font-mono block font-bold">✔ Aliran Stabil</span>
                   </div>
                   <div className="bg-white p-5 rounded-2xl border border-slate-200 flex flex-col justify-between shadow-sm">
-                    <span className="text-[10px] font-mono uppercase text-slate-500 tracking-wider font-bold">Available Vacant Pucks</span>
+                    <span className="text-[10px] font-mono uppercase text-slate-500 tracking-wider font-bold">Slot Kosong Tersedia</span>
                     <p className="text-2xl font-black text-emerald-600 mt-1.5 font-mono">{currentArea.availableSlots}</p>
-                    <span className="text-[9px] text-slate-500 mt-1 uppercase font-mono block font-medium">out of {currentArea.totalSlots} slots</span>
+                    <span className="text-[9px] text-slate-500 mt-1 uppercase font-mono block font-medium">dari {currentArea.totalSlots} slot</span>
                   </div>
                   <div className="bg-white p-5 rounded-2xl border border-slate-200 flex flex-col justify-between shadow-sm">
-                    <span className="text-[10px] font-mono uppercase text-slate-500 tracking-wider font-bold">Simulated Active Escrow</span>
+                    <span className="text-[10px] font-mono uppercase text-slate-500 tracking-wider font-bold">Total Keuangan Terbayar</span>
                     <p className="text-2xl font-black text-blue-600 mt-1.5 font-mono">
                       Rp {((currentArea.totalSlots - currentArea.availableSlots) * currentArea.ratePerHour).toLocaleString("id-ID")}
                     </p>
-                    <span className="text-[9px] text-slate-500 mt-1 uppercase font-mono block font-medium">accumulated rate/hr</span>
+                    <span className="text-[9px] text-slate-500 mt-1 uppercase font-mono block font-medium">akumulasi biaya/jam</span>
                   </div>
                   <div className="bg-white p-5 rounded-2xl border border-slate-200 flex flex-col justify-between shadow-sm">
-                    <span className="text-[10px] font-mono uppercase text-slate-500 tracking-wider font-bold">Total holding locks</span>
+                    <span className="text-[10px] font-mono uppercase text-slate-500 tracking-wider font-bold">Total Slot Dipesan</span>
                     <p className="text-2xl font-black text-amber-600 mt-1.5 font-mono">
                       {slots.filter(s => s.areaId === selectedAreaId && s.status === "Reserved").length}
                     </p>
-                    <span className="text-[9px] text-slate-500 mt-1 uppercase font-mono block font-medium">active reservation claims</span>
+                    <span className="text-[9px] text-slate-500 mt-1 uppercase font-mono block font-medium">klaim pesanan aktif</span>
                   </div>
                 </div>
 
-                             {/* Operator Gate & Traffic Simulation Area */}
+                {/* Operator Gate & Traffic Simulation Area */}
                 <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
                   <div>
                     <span className="text-[9px] font-mono text-blue-600 uppercase bg-blue-50 px-2 py-0.5 rounded border border-blue-100 font-bold">
-                      LIVE SYSTEM SIMULATION SANDBOX
+                      KOTAK SIMULASI SISTEM REAL-TIME
                     </span>
-                    <h3 className="text-lg font-bold text-slate-900 mt-3">Interactive Traffic Gateway Controller</h3>
+                    <h3 className="text-lg font-bold text-slate-900 mt-3">Kontroler Gateway Lalu Lintas Interaktif</h3>
                     <p className="text-xs text-slate-500 font-normal mt-0.5">
-                      Simulate a live physical car entering or departing to test the sub-second reactivity of the ParkEase UI database syncing.
+                      Simulasikan kedatangan atau keberangkatan mobil nyata untuk menguji kecepatan sinkronisasi sistem ParkEase secara instan.
                     </p>
                   </div>
 
@@ -767,8 +767,8 @@ export default function Dashboard() {
                       className="py-4 px-6 bg-slate-50 border border-slate-200 hover:bg-slate-100 hover:border-slate-300 rounded-xl transition-all flex items-center justify-between group cursor-pointer disabled:opacity-40 disabled:pointer-events-none"
                     >
                       <div className="text-left">
-                        <span className="text-[10px] uppercase font-mono text-emerald-600 tracking-wider block font-bold">1. Input Random Arrival</span>
-                        <span className="text-xs text-slate-500 font-normal mt-0.5 block">Simulate sensor triggering for a parked vehicle.</span>
+                        <span className="text-[10px] uppercase font-mono text-emerald-600 tracking-wider block font-bold">1. Simulasikan Mobil Masuk</span>
+                        <span className="text-xs text-slate-500 font-normal mt-0.5 block">Simulasikan sensor mencatat kendaraan yang baru parkir.</span>
                       </div>
                       <Play className="h-5 w-5 text-emerald-600 shrink-0 group-hover:translate-x-1.5 transition-transform" />
                     </button>
@@ -779,8 +779,8 @@ export default function Dashboard() {
                       className="py-4 px-6 bg-slate-50 border border-slate-200 hover:bg-slate-100 hover:border-slate-300 rounded-xl transition-all flex items-center justify-between group cursor-pointer disabled:opacity-40 disabled:pointer-events-none"
                     >
                       <div className="text-left">
-                        <span className="text-[10px] uppercase font-mono text-rose-600 tracking-wider block font-bold">2. Trigger Vehicle Departure</span>
-                        <span className="text-xs text-slate-500 font-normal mt-0.5 block">Simulate exiting slot and clearing geomagnetic puck database.</span>
+                        <span className="text-[10px] uppercase font-mono text-rose-600 tracking-wider block font-bold">2. Simulasikan Mobil Keluar</span>
+                        <span className="text-xs text-slate-500 font-normal mt-0.5 block">Simulasikan pembersihan database status sensor saat mobil keluar.</span>
                       </div>
                       <LogOut className="h-5 w-5 text-rose-600 shrink-0 group-hover:translate-x-1.5 transition-transform" />
                     </button>
@@ -788,7 +788,7 @@ export default function Dashboard() {
 
                   {/* Manual Bypass control list of slotted units */}
                   <div className="pt-4 border-t border-slate-200">
-                    <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest block mb-3 font-bold">Manual Slot Release Console</span>
+                    <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest block mb-3 font-bold">Konsol Pengosongan Slot Manual</span>
                     <div className="flex flex-wrap gap-2 max-h-[140px] overflow-y-auto p-1 scrollbar-thin">
                       {areaSlots.map((slot) => {
                         const canVacate = slot.status !== "Available";
@@ -808,7 +808,7 @@ export default function Dashboard() {
                               <button 
                                 onClick={() => handleManualVacateSlot(slot.id)}
                                 className="text-rose-600 hover:text-white bg-slate-100 hover:bg-rose-600 p-0.5 rounded transition-colors cursor-pointer border border-slate-250 font-bold font-mono"
-                                title="Force release slot vacancy"
+                                title="Paksa pengosongan slot"
                               >
                                 ✕
                               </button>
@@ -820,15 +820,15 @@ export default function Dashboard() {
                   </div>
                 </div>
 
-                           {/* Analytics Chart Block */}
+                {/* Analytics Chart Block */}
                 <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-6">
                   <div className="flex items-center justify-between">
                     <div>
                       <h4 className="text-base font-extrabold text-slate-900 flex items-center gap-2">
-                        <TrendingUp className="text-blue-600 h-4.5 w-4.5" /> Analytical SaaS Reports
+                        <TrendingUp className="text-blue-600 h-4.5 w-4.5" /> Laporan Analitik SaaS
                       </h4>
                       <p className="text-xs text-slate-500 font-normal mt-0.5">
-                        Live projections based on historical model records.
+                        Proyeksi real-time berdasarkan data historis.
                       </p>
                     </div>
                     <span className="text-[10px] font-mono bg-blue-50 text-blue-600 px-2 py-0.5 rounded border border-blue-150 font-bold uppercase shadow-sm">
@@ -841,7 +841,7 @@ export default function Dashboard() {
                     
                     {/* CHART 1: TIME OCCUPANCY AREA CHART */}
                     <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
-                      <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider block mb-4 font-bold">Hourly Occupancy Peak Factor</span>
+                      <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider block mb-4 font-bold">Faktor Puncak Okupansi per Jam</span>
                       <div className="h-60 w-full text-xs font-sans">
                         <ResponsiveContainer width="100%" height="100%">
                           <AreaChart data={MOCK_ANALYTICS[selectedAreaId] || MOCK_ANALYTICS.scbd}>
@@ -855,7 +855,7 @@ export default function Dashboard() {
                             <XAxis dataKey="time" stroke="#64748b" />
                             <YAxis domain={[0, 100]} stroke="#64748b" unit="%" />
                             <Tooltip contentStyle={{ backgroundColor: "#ffffff", borderColor: "#cbd5e1", borderRadius: "12px", color: "#1e293b" }} />
-                            <Area type="monotone" dataKey="occupancyRate" name="Occupancy %" stroke="#2563eb" fillOpacity={1} fill="url(#colorOcc)" strokeWidth={2.5} />
+                            <Area type="monotone" dataKey="occupancyRate" name="Okupansi %" stroke="#2563eb" fillOpacity={1} fill="url(#colorOcc)" strokeWidth={2.5} />
                           </AreaChart>
                         </ResponsiveContainer>
                       </div>
@@ -863,7 +863,7 @@ export default function Dashboard() {
 
                     {/* CHART 2: REVENUE FLOW */}
                     <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200">
-                      <span className="text-[10px] font-mono text-slate-505 uppercase tracking-wider block mb-4 font-bold">Predicted Hourly Revenue (IDR)</span>
+                      <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider block mb-4 font-bold">Prediksi Pendapatan per Jam (IDR)</span>
                       <div className="h-60 w-full text-xs font-sans">
                         <ResponsiveContainer width="100%" height="100%">
                           <BarChart data={MOCK_ANALYTICS[selectedAreaId] || MOCK_ANALYTICS.scbd}>
@@ -871,7 +871,7 @@ export default function Dashboard() {
                             <XAxis dataKey="time" stroke="#64748b" />
                             <YAxis stroke="#64748b" />
                             <Tooltip formatter={(v) => `Rp ${Number(v).toLocaleString("id-ID")}`} contentStyle={{ backgroundColor: "#ffffff", borderColor: "#cbd5e1", borderRadius: "12px", color: "#1e293b" }} />
-                            <Bar dataKey="revenue" name="Revenue Flow" fill="#1e40af" radius={[4, 4, 0, 0]} />
+                            <Bar dataKey="revenue" name="Aliran Pendapatan" fill="#1e40af" radius={[4, 4, 0, 0]} />
                           </BarChart>
                         </ResponsiveContainer>
                       </div>
@@ -896,16 +896,16 @@ export default function Dashboard() {
               <Check className="h-6 w-6" />
             </div>
 
-            <h4 className="text-lg font-black text-slate-900">Smart Lock Claims Succeeded!</h4>
+            <h4 className="text-lg font-black text-slate-900">Klaim Penguncian Pintar Berhasil!</h4>
             <p className="text-xs text-slate-500 font-normal leading-relaxed">
-              Your parking spot space is now securely bound on the SaaS Cloud. The entry barrier camera is synced with your plate digits. Keep an eye on your claim countdown!
+              Tempat parkir Anda sekarang telah berhasil dipesan pada SaaS Cloud. Kamera pembatas pintu masuk telah disinkronkan dengan plat nomor Anda. Harap diperhatikan waktu hitung mundur pemesanan Anda!
             </p>
 
             <button
               onClick={() => setIsSuccessModalOpen(false)}
               className="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs uppercase rounded-xl tracking-wider cursor-pointer shadow-md"
             >
-              Done - Back to map
+              Selesai - Kembali ke Peta
             </button>
           </div>
         </div>
